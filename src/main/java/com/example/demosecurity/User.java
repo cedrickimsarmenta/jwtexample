@@ -17,7 +17,7 @@ public class User implements Serializable {
     @JoinColumn(name = "email", referencedColumnName = "email")
     private List<Role> roles;
 
-    public User(Long id, String email, String username, String password, boolean enabled, List roles) {
+    public User(Long id, String email, String username, String password, boolean enabled, List<Role> roles) {
         this.id = id;
         this.email = email;
         this.username = username;
@@ -26,7 +26,7 @@ public class User implements Serializable {
         this.roles = roles;
     }
 
-    public User(String email, String username, String password, boolean enabled, List roles) {
+    public User(String email, String username, String password, boolean enabled, List<Role> roles) {
         this(null, email, username, password, enabled, roles);
     }
 
@@ -59,7 +59,7 @@ public class User implements Serializable {
         this.enabled = enabled;
     }
 
-    public List getRoles() {
+    public List<Role> getRoles() {
         return roles;
     }
     public void setRoles(List<Role> roles) {
